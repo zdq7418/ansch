@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/mydata_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:text="查看详情"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+
+        <AutoCompleteTextView
+            android:id="@+id/peiname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="姓名"
+            android:enabled="false"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+    </android.support.design.widget.TextInputLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <RadioGroup
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sex"
+            >
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="男"
+                android:enabled="false"
+                android:checked="true"
+                android:id="@+id/nan"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="女"
+                android:id="@+id/nv"
+                />
+
+        </RadioGroup>
+    </LinearLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+
+        <AutoCompleteTextView
+            android:id="@+id/peraccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="账户名"
+            android:enabled="false"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+
+        <AutoCompleteTextView
+            android:id="@+id/ruzhiriqi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="入职日期"
+            android:enabled="false"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+
+        <AutoCompleteTextView
+            android:id="@+id/isuse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="是否使用"
+            android:enabled="false"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Switch
+        android:id="@+id/isteacher"
+        android:layout_marginTop="10dp"
+        android:textSize="15dp"
+        android:enabled="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="是否是教师"
+        />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/chongzhi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="重置密码"
+            />
+        <Button
+            android:id="@+id/guoqi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="过期"
+            />
+        <Button
+            android:id="@+id/banji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="编辑"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取消"
+            android:visibility="gone"
+            android:id="@+id/quxiao"
+            />
+    </LinearLayout>
+
+</LinearLayout>
