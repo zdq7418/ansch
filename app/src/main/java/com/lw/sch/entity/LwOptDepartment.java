@@ -40,4 +40,8 @@ public class LwOptDepartment implements java.io.Serializable {
 		this.departmentName = departmentName;
 	}
 
+	@Override
+	public String toString() {
+		return departmentName;
+	}
 }

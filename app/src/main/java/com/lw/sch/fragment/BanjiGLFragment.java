@@ -103,7 +103,7 @@ public class BanjiGLFragment extends Fragment {
 
         //设置默认打开第一页
         mViewPager.setCurrentItem(0);
-
+        StaticSource.fragmentname="XibuFragment";
         //将顶部文字恢复默认值
         resetTextViewTextColor();
         xibuguanli.setTextColor(getResources().getColor(R.color.main_top_tab_color_2));
@@ -190,7 +190,7 @@ public class BanjiGLFragment extends Fragment {
                         resetTextViewTextColor();
                         xibuguanli.setTextColor(getResources().getColor(R.color.main_top_tab_color_2));
                     }
-                    StaticSource.fragmentname="xibufragment";
+                    StaticSource.fragmentname="XibuFragment";
                     break;
 
                 //当前为页卡2
@@ -205,7 +205,7 @@ public class BanjiGLFragment extends Fragment {
                         resetTextViewTextColor();
                         banjiguanli.setTextColor(getResources().getColor(R.color.main_top_tab_color_2));
                     }
-                    StaticSource.fragmentname="banjifragment";
+                    StaticSource.fragmentname="BanjiFragment";
                     break;
 
             }

@@ -18,6 +18,17 @@ public class JsonTools {
     	return gson.fromJson(jsonString,new TypeToken<T>(){}.getType());
     }
 
+    public static boolean isInteger(String str)
+    {
+        try
+        {
+            Integer.parseInt(str);
+            return true;
+        }
+        catch(NumberFormatException ex){}
+        return false;
+    }
+
 
 
 }

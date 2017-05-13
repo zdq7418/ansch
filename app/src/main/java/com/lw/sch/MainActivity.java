@@ -89,7 +89,6 @@ public class MainActivity extends AppCompatActivity
             // 输入后点击回车改变文本
             @Override
             public boolean onQueryTextSubmit(String query) {
-                Snackbar.make(searchView,query,Snackbar.LENGTH_LONG).show();
                 Intent intent = new Intent();
                 intent.setAction(StaticSource.fragmentname);
                 intent.putExtra("key",query);
