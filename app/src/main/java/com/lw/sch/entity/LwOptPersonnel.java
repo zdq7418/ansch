@@ -34,6 +34,9 @@ public class LwOptPersonnel implements java.io.Serializable {
 		this.personnelName = personnelName;
 	}
 
+	public LwOptPersonnel() {
+	}
+
 	/** full constructor */
 	public LwOptPersonnel(String personnelName, String personnelSex,
 			Timestamp inductionDate, String personnelPosition, Integer roomId,
@@ -169,4 +172,8 @@ public class LwOptPersonnel implements java.io.Serializable {
 		this.lwOptCurriculumStudentses = lwOptCurriculumStudentses;
 	}
 
+	@Override
+	public String toString() {
+		return personnelName;
+	}
 }

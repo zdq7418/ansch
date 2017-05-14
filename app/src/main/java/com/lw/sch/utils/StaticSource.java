@@ -8,10 +8,11 @@ import com.google.gson.GsonBuilder;
  */
 
 public class StaticSource {
-    public static final String SERVICE="http://192.168.0.105:8888/";
+    public static final String SERVICE="http://172.15.0.128:8888/";
     public static final String LOGIN="login!antijiao.action";
     public static final String FINDALLCLASS="personnel!findAll.action";
     public static final String FINDALLPER="personnel!findAll.action";
+    public static final String FINDALLPERTWO="personnel!findAllPer.action";
     public static final String SAVEPERSONNEL="personnel!savePersonnel.action";
     public static final String OVERDUE="personnel!overdue.action";
     public static final String FINDBUYKEY="personnel!findBuyKey.action";
@@ -29,6 +30,17 @@ public class StaticSource {
     public static final String DELETECLA="clas!deleteCla.action";
     public static final String FINDCLABYKEY="clas!findClaByKey.action";
     //
+    public static final String FINDALLCURR="curr!findAllCurr.action";
+    public static final String SAVECURR="curr!saveCurr.action";
+    public static final String SAVEORUPCURR="curr!saveOrUpCurr.action";
+    public static final String DELETECURR="curr!deleteCurr.action";
+    public static final String FINDCURRBYNAME="curr!findCurrByName.action";
+    //
+    public static final String FINDALLCURRSTU="currstu!findAllCurrStu.action";
+    public static final String SAVECURRSTU="currstu!saveCurrStu.action";
+    public static final String SAVEORUPCURRSTU="currstu!saveOrUpCurrStu.action";
+    public static final String DELETECURRSTU="currstu!deleteCurrStu.action";
+    public static final String FINDCURRSTUBYKEY="currstu!findCurrStuByKey.action";
     public static String fragmentname="";
     public static Gson gson = new GsonBuilder().setDateFormat("yyyy.MM.dd HH:mm:ss").create();
 }

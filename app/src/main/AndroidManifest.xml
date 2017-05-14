@@ -32,7 +32,9 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.BanjiActivity" />
         <activity android:name=".activity.RenyuanActivity" />
-        <activity android:name=".activity.XibuActivity"></activity>
+        <activity android:name=".activity.XibuActivity" />
+        <activity android:name=".activity.KechengActivity" />
+        <activity android:name=".activity.XueShengKCActivity"></activity>
     </application>
 
 </manifest>

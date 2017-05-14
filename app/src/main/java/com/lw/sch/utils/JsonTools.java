@@ -29,6 +29,17 @@ public class JsonTools {
         return false;
     }
 
+    public static boolean isDouble(String str)
+    {
+        try
+        {
+            Double.parseDouble(str);
+            return true;
+        }
+        catch(NumberFormatException ex){}
+        return false;
+    }
+
 
 
 }

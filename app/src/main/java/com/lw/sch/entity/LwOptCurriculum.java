@@ -64,4 +64,8 @@ public class LwOptCurriculum implements java.io.Serializable {
 		this.lwOptCurriculumStudentses = lwOptCurriculumStudentses;
 	}
 
+	@Override
+	public String toString() {
+		return curriculumName;
+	}
 }

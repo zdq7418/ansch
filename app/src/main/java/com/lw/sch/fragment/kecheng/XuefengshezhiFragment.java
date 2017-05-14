@@ -19,6 +19,7 @@ import com.hss01248.dialog.interfaces.MyDialogListener;
 import com.hss01248.dialog.interfaces.MyItemDialogListener;
 import com.lw.sch.R;
 import com.lw.sch.activity.RenyuanActivity;
+import com.lw.sch.entity.LwOptCurriculumStudents;
 import com.lw.sch.entity.LwOptLogin;
 import com.lw.sch.utils.JsonTools;
 import com.lw.sch.utils.StaticSource;
@@ -35,8 +36,8 @@ import java.util.List;
 
 public class XuefengshezhiFragment extends Fragment{
     private RecyclerView recyclerView;
-    private List<LwOptLogin> lwOptDepartments=new ArrayList<>();
-    private CommonAdapter<LwOptLogin> mAdapter;
+    private List<LwOptCurriculumStudents> lwOptDepartments=new ArrayList<>();
+    private CommonAdapter<LwOptCurriculumStudents> mAdapter;
     private SwipeRefreshLayout swipeRefreshLayout;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -60,9 +61,9 @@ public class XuefengshezhiFragment extends Fragment{
             }
         });
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));//这里用线性显示 类似于listview
-        mAdapter=new CommonAdapter<LwOptLogin>(getActivity(),R.layout.xibu_items,lwOptDepartments) {
+        mAdapter=new CommonAdapter<LwOptCurriculumStudents>(getActivity(),R.layout.xibu_items,lwOptDepartments) {
             @Override
-            protected void convert(ViewHolder holder, LwOptLogin lwOptClass, int position) {
+            protected void convert(ViewHolder holder, LwOptCurriculumStudents lwOptClass, int position) {
                 holder.setText(R.id.xibuname, lwOptClass.getLwOptPersonnel().getPersonnelName());
             }
         };
@@ -113,9 +114,9 @@ public class XuefengshezhiFragment extends Fragment{
             @Override
             public void onSuccess(String result) {
                 Gson gson = new GsonBuilder().setDateFormat("yyyy.MM.dd HH:mm:ss").create();
-                List<LwOptLogin> lwOptDepartmentss=gson.fromJson(result,new TypeToken<List<LwOptLogin>>(){}.getType());
+                List<LwOptCurriculumStudents> lwOptDepartmentss=gson.fromJson(result,new TypeToken<List<LwOptCurriculumStudents>>(){}.getType());
                 lwOptDepartments.clear();
-                for (LwOptLogin l:lwOptDepartmentss){
+                for (LwOptCurriculumStudents l:lwOptDepartmentss){
                     lwOptDepartments.add(l);
                 }
                 mAdapter.notifyDataSetChanged();
