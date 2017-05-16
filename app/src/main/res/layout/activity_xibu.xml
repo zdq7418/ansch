@@ -23,66 +23,32 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_gravity="center"
-                android:id="@+id/banjititle"
-                android:text="添加班级"
+                android:id="@+id/xubutitle"
+                android:text="添加系部"
                 android:textColor="@android:color/white"
                 android:textSize="20sp" />
 
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
-    <LinearLayout
-        android:layout_marginTop="10dp"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="班级名称"
-            android:id="@+id/banjiname"
+            android:hint="系部名称"
+            android:id="@+id/xibuname"
             />
     </android.support.design.widget.TextInputLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:text=" 系部："
-            />
-        <com.jaredrummler.materialspinner.MaterialSpinner
-            android:id="@+id/xibu_spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_height="wrap_content">
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="班级人数"
-                android:id="@+id/banjinum"
-                />
-        </android.support.design.widget.TextInputLayout>
     <android.support.v7.widget.ButtonBarLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
         android:layout_height="wrap_content">
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="保存"
-            android:id="@+id/banjisave"
+            android:id="@+id/xibusave"
             />
     </android.support.v7.widget.ButtonBarLayout>
-</LinearLayout>
 </LinearLayout>

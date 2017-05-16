@@ -25,6 +25,9 @@ public class LwOptClass implements java.io.Serializable {
 		this.className = s;
 	}
 
+	public LwOptClass() {
+	}
+
 	/** full constructor */
 	public LwOptClass(String className, String classDepartment,
 			Integer classNumber, Set lwOptPersonnelClasses) {

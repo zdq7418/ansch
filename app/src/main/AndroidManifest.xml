@@ -31,7 +31,8 @@
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.BanjiActivity" />
-        <activity android:name=".activity.RenyuanActivity"></activity>
+        <activity android:name=".activity.RenyuanActivity" />
+        <activity android:name=".activity.XibuActivity"></activity>
     </application>
 
 </manifest>

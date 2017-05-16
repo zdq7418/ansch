@@ -41,7 +41,7 @@ public class RenyuanActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_renyuan);
-        toolbar = (Toolbar) findViewById(R.id.mydata_toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -82,7 +82,33 @@ public class RenyuanActivity extends AppCompatActivity {
         chongzhi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                RequestParams params = new RequestParams(StaticSource.SERVICE+StaticSource.OVERDUE);
+                params.addBodyParameter("loginId",lwOptLogin.getLoginId().toString());
+                params.addBodyParameter("bs","1");
+                x.http().post(params, new Callback.CommonCallback<String>() {
+                    @Override
+                    public void onSuccess(String result) {
+                        if("0".equals(result)){
+                            Snackbar.make(guoqi,"操作失败",Snackbar.LENGTH_LONG).show();
+                        }else{
+                            Snackbar.make(guoqi,"重置成功，密码为123456",Snackbar.LENGTH_LONG).show();
+                        }
+                    }
 
+                    @Override
+                    public void onError(Throwable ex, boolean isOnCallback) {
+                        Snackbar.make(guoqi,"操作失败",Snackbar.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void onCancelled(CancelledException cex) {
+                        Snackbar.make(guoqi,"操作取消",Snackbar.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void onFinished() {
+                    }
+                });
             }
         });
         guoqi.setOnClickListener(new View.OnClickListener() {
@@ -128,6 +154,7 @@ public class RenyuanActivity extends AppCompatActivity {
                     isteacher.setEnabled(true);
                     quxiao.setVisibility(View.VISIBLE);
                     bianji.setText("保存");
+
                 }else{
                     if (TextUtils.isEmpty(name.getText().toString())) {
                         name.setError("请输入姓名");
@@ -163,6 +190,36 @@ public class RenyuanActivity extends AppCompatActivity {
                     lwOptPersonnel.setPersonnelSex(sex.getCheckedRadioButtonId()==R.id.nan?"男":"女");
                     lwOptLogin.setLoginName(acount.getText().toString());
                     lwOptLogin.setLwOptPersonnel(lwOptPersonnel);
+                    RequestParams params = new RequestParams(StaticSource.SERVICE+StaticSource.UPDATEPERSONNEL);
+                    params.addBodyParameter("loginId",lwOptLogin.getLoginId().toString());
+                    params.addBodyParameter("peopleName",lwOptPersonnel.getPersonnelName());
+                    params.addBodyParameter("loginName",lwOptLogin.getLoginName());
+                    params.addBodyParameter("loginSex",lwOptPersonnel.getPersonnelSex());
+                    params.addBodyParameter("isTeacher",lwOptPersonnel.getIsTeacher().toString());
+                    x.http().post(params, new Callback.CommonCallback<String>() {
+                        @Override
+                        public void onSuccess(String result) {
+                            if("0".equals(result)){
+                                Snackbar.make(guoqi,"操作失败",Snackbar.LENGTH_LONG).show();
+                            }else{
+                                Snackbar.make(guoqi,"操作成功",Snackbar.LENGTH_LONG).show();
+                            }
+                        }
+
+                        @Override
+                        public void onError(Throwable ex, boolean isOnCallback) {
+                            Snackbar.make(guoqi,"操作失败",Snackbar.LENGTH_LONG).show();
+                        }
+
+                        @Override
+                        public void onCancelled(CancelledException cex) {
+                            Snackbar.make(guoqi,"操作取消",Snackbar.LENGTH_LONG).show();
+                        }
+
+                        @Override
+                        public void onFinished() {
+                        }
+                    });
                     bianji.setText("编辑");
                 }
 
