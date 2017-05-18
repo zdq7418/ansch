@@ -15,9 +15,13 @@ import android.widget.TextView;
 
 import com.lw.sch.R;
 import com.lw.sch.adapter.MFragmentPagerAdapter;
+import com.lw.sch.fragment.kecheng.KechengFragment;
+import com.lw.sch.fragment.kecheng.XuefengshezhiFragment;
+import com.lw.sch.fragment.kecheng.XueshengkechengFragment;
 import com.lw.sch.fragment.sushe.DalouFragment;
 import com.lw.sch.fragment.sushe.FangjianFragment;
 import com.lw.sch.fragment.sushe.LoucengFragment;
+import com.lw.sch.utils.StaticSource;
 
 import java.util.ArrayList;
 
@@ -101,7 +105,7 @@ public class KechengGLFragment extends Fragment {
 
         //设置默认打开第一页
         mViewPager.setCurrentItem(0);
-
+        StaticSource.fragmentname="KechengFragment";
         //将顶部文字恢复默认值
         resetTextViewTextColor();
         renyuanluru.setTextColor(getResources().getColor(R.color.main_top_tab_color_2));
@@ -138,9 +142,9 @@ public class KechengGLFragment extends Fragment {
      */
     private void InitFragment(){
         fragmentArrayList = new ArrayList<Fragment>();
-        fragmentArrayList.add(new DalouFragment());
-        fragmentArrayList.add(new LoucengFragment());
-        fragmentArrayList.add(new FangjianFragment());
+        fragmentArrayList.add(new KechengFragment());
+        fragmentArrayList.add(new XueshengkechengFragment());
+        fragmentArrayList.add(new XuefengshezhiFragment());
 
         fragmentManager =getChildFragmentManager();
 
@@ -189,6 +193,7 @@ public class KechengGLFragment extends Fragment {
                         resetTextViewTextColor();
                         renyuanluru.setTextColor(getResources().getColor(R.color.main_top_tab_color_2));
                     }
+                    StaticSource.fragmentname="KechengFragment";
                     break;
 
                 //当前为页卡2
@@ -203,6 +208,7 @@ public class KechengGLFragment extends Fragment {
                         resetTextViewTextColor();
                         renyuanguanli.setTextColor(getResources().getColor(R.color.main_top_tab_color_2));
                     }
+                    StaticSource.fragmentname="XueshengkechengFragment";
                     break;
 
                 //当前为页卡3
@@ -217,6 +223,7 @@ public class KechengGLFragment extends Fragment {
                         resetTextViewTextColor();
                         jueseguanli.setTextColor(getResources().getColor(R.color.main_top_tab_color_2));
                     }
+                    StaticSource.fragmentname="XuefengshezhiFragment";
                     break;
 
             }
