@@ -2,10 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/chengjiguanli"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="成绩管理" />
+
         <item
             android:id="@+id/banjiguanli"
             android:icon="@drawable/ic_menu_gallery"
@@ -14,11 +11,7 @@
             android:id="@+id/kechengguanli"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="课程管理" />
-        <item
-            android:id="@+id/susheguanli"
-            android:icon="@drawable/ic_menu_send"
 
-            android:title="宿舍管理" />
 
         <item
             android:id="@+id/xitonguanli"

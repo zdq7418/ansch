@@ -55,11 +55,12 @@ public class MainActivity extends AppCompatActivity
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        chengjiGLFragment=new ChengjiGLFragment();
+        banjiGLFragment=new BanjiGLFragment();
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.content, chengjiGLFragment)
+                .replace(R.id.content, banjiGLFragment)
                 .commit();
+        toolbar.setTitle("班级管理");
 
     }
 
@@ -121,14 +122,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.chengjiguanli) {
-            chengjiGLFragment=new ChengjiGLFragment();
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.content, chengjiGLFragment)
-                    .commit();
-            toolbar.setTitle("成绩管理");
-        } else if (id == R.id.banjiguanli) {
+       if (id == R.id.banjiguanli) {
             banjiGLFragment=new BanjiGLFragment();
             getSupportFragmentManager()
                     .beginTransaction()
@@ -142,14 +136,7 @@ public class MainActivity extends AppCompatActivity
                     .replace(R.id.content, kechengGLFragment)
                     .commit();
             toolbar.setTitle("课程管理");
-        } else if (id == R.id.susheguanli) {
-            susheGLFragment=new SusheGLFragment();
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.content, susheGLFragment)
-                    .commit();
-            toolbar.setTitle("宿舍管理");
-        } else if (id == R.id.xitonguanli) {
+        }else if (id == R.id.xitonguanli) {
             xitongGLFragment=new XitongGLFragment();
             getSupportFragmentManager()
                     .beginTransaction()
